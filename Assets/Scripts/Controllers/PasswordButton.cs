@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+// ----------------------------------------------------------------------------
+// PasswordButton.cs
+//
+// Author: Arturo Serrano
+// Date: 27/02/21
+// Copyright: © Arturo Serrano
+//
+// Brief: Sends events of button pressed by player on Dial
+// ----------------------------------------------------------------------------
 using UnityEngine;
+using UnityEngine.Events;
+
+public class ButtonInteractableUnityEvent : UnityEvent<int> { }
 
 public class PasswordButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ButtonInteractableUnityEvent OnButtonPressed = new ButtonInteractableUnityEvent();
 
-    // Update is called once per frame
-    void Update()
+    public int number;
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            OnButtonPressed?.Invoke(number);
+        }
     }
 }
