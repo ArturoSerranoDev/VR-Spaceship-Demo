@@ -45,7 +45,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c5803d2f5530c3c44a66564b6cadac35, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -146,6 +146,7 @@ MonoBehaviour:
   leftDoor: {fileID: 4480099839805666532}
   rightDoor: {fileID: 3366611726175688714}
   triggerArea: {fileID: 7250180836666184106}
+  doorsAudioSource: {fileID: 7932841283990231270}
   moveAmount: 3
   lerpTime: 0
 --- !u!65 &7250180836666184106

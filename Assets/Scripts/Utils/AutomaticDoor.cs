@@ -15,6 +15,7 @@ public class AutomaticDoor : MonoBehaviour
     public GameObject leftDoor;
     public GameObject rightDoor;
     public BoxCollider triggerArea;
+    public AudioSource doorsAudioSource;
     public float moveAmount;
     public float lerpTime;
 
@@ -60,6 +61,7 @@ public class AutomaticDoor : MonoBehaviour
             }
         });
 
+        doorsAudioSource.Play();
         isOpen = !isOpen;
     }
 }
