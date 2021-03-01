@@ -16,7 +16,7 @@ public class CrossingTrigger : MonoBehaviour
             OnPlayerCrossed?.Invoke();
 
             // Disable this component for the time being not to trigger it multiple times
-            this.enabled = false;
+            this.gameObject.SetActive(false);
         }
     }
 }
