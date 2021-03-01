@@ -9,6 +9,7 @@
 // ----------------------------------------------------------------------------
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class ButtonInteractableUnityEvent : UnityEvent<int> { }
 
@@ -22,6 +23,7 @@ public class PasswordButton : MonoBehaviour
         if (other.tag == "Hand")
         {
             OnButtonPressed?.Invoke(number);
+            transform.DOLocalMoveZ(transform.localPosition.z - 0.01f, 0.1f).SetLoops(2, LoopType.Yoyo);
         }
     }
 }

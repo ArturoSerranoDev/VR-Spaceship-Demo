@@ -9,11 +9,14 @@
 // of roll,pitch,yaw and speed data 
 // ----------------------------------------------------------------------------
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WheelDataDriver : MonoBehaviour
 {
     public WheelInteractable wheelInteractable;
     public DialInteractable speedDialInteractable;
+
+    public float fireEventLimit = 0f;
 
     [Header("Rot Values")]
     public float rollAmount = 0f;
@@ -22,6 +25,12 @@ public class WheelDataDriver : MonoBehaviour
 
     [Header("Speed")]
     public float speedAmount = 0f;
+
+    [Header("Events")]
+    public UnityEvent OnRollOverThresholdEvent = new UnityEvent();
+    public UnityEvent OnPitchOverThresholdEvent = new UnityEvent();
+    public UnityEvent OnYawOverThresholdEvent = new UnityEvent();
+
     int maxsteps;
 
     float maxRotationalValue;
@@ -54,6 +63,12 @@ public class WheelDataDriver : MonoBehaviour
         pitchAmount = Mathf.Lerp(-1f, 1f, (pitchAmount + maxRotationalValue) / (maxRotationalValue + maxRotationalValue));
         yawAmount = Mathf.Lerp(-1f, 1f, (yawAmount + maxRotationalValue) / (maxRotationalValue + maxRotationalValue));
 
+        if (rollAmount < -fireEventLimit || rollAmount > fireEventLimit)
+            OnRollOverThresholdEvent?.Invoke();
+        if (pitchAmount < -fireEventLimit || pitchAmount > fireEventLimit)
+            OnPitchOverThresholdEvent?.Invoke();
+        if (yawAmount < -fireEventLimit || yawAmount > fireEventLimit)
+            OnYawOverThresholdEvent?.Invoke();
     }
 
     public void OnDialStepChanged(int step)
