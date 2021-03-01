@@ -15,12 +15,11 @@ public class ButtonInteractableUnityEvent : UnityEvent<int> { }
 public class PasswordButton : MonoBehaviour
 {
     public ButtonInteractableUnityEvent OnButtonPressed = new ButtonInteractableUnityEvent();
-
     public int number;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Hand")
         {
             OnButtonPressed?.Invoke(number);
         }

@@ -16,7 +16,7 @@ public class AutomaticDoor : MonoBehaviour
     bool isTweening;
     bool mustRedoTween;
 
-    void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -24,7 +24,7 @@ public class AutomaticDoor : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -35,7 +35,7 @@ public class AutomaticDoor : MonoBehaviour
         }
     }
 
-    void SwitchDoor()
+    protected void SwitchDoor()
     {
         if (isTweening)
             return;

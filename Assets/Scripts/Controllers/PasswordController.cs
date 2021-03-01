@@ -19,7 +19,7 @@ public class PasswordController : MonoBehaviour
 
     public string password = "885";
     string currentPassword;
-    public TextMeshProUGUI displayText;
+    public TextMeshPro displayText;
 
     public UnityEvent OnCorrectPassword = new UnityEvent();
     // Start is called before the first frame update
@@ -50,6 +50,10 @@ public class PasswordController : MonoBehaviour
             if (password == currentPassword)
             {
                 OnCorrectPassword?.Invoke();
+                displayText.color = Color.green;
+
+                // Disable it after first correct password
+                this.enabled = false;
             }
             else
             {
