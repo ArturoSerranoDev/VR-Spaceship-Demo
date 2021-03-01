@@ -30,6 +30,7 @@ public class WheelDataDriver : MonoBehaviour
     public UnityEvent OnRollOverThresholdEvent = new UnityEvent();
     public UnityEvent OnPitchOverThresholdEvent = new UnityEvent();
     public UnityEvent OnYawOverThresholdEvent = new UnityEvent();
+    public UnityEvent OnSpeedOverThresholdEvent = new UnityEvent();
 
     int maxsteps;
 
@@ -63,6 +64,7 @@ public class WheelDataDriver : MonoBehaviour
         pitchAmount = Mathf.Lerp(-1f, 1f, (pitchAmount + maxRotationalValue) / (maxRotationalValue + maxRotationalValue));
         yawAmount = Mathf.Lerp(-1f, 1f, (yawAmount + maxRotationalValue) / (maxRotationalValue + maxRotationalValue));
 
+        // TODO: Only be called once
         if (rollAmount < -fireEventLimit || rollAmount > fireEventLimit)
             OnRollOverThresholdEvent?.Invoke();
         if (pitchAmount < -fireEventLimit || pitchAmount > fireEventLimit)
@@ -75,5 +77,8 @@ public class WheelDataDriver : MonoBehaviour
     {
         // Update value of dial from minStep - MaxStep to [0,1]
         speedAmount = (float)step / maxsteps;
+
+        if (speedAmount > 0.1f)
+            OnSpeedOverThresholdEvent?.Invoke();
     }
 }

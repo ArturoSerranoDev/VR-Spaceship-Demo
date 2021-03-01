@@ -1,5 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+// ----------------------------------------------------------------------------
+// UnlockableDoor.cs
+//
+// Author: Arturo Serrano
+// Date: 27/02/21
+// Copyright: © Arturo Serrano
+//
+// Brief: Handles the opening/closing of doors depending if the player crosses its trigger area
+// ----------------------------------------------------------------------------
 using UnityEngine;
 using DG.Tweening;
 

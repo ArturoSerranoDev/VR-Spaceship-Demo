@@ -1,3 +1,12 @@
+// ----------------------------------------------------------------------------
+// CrossingTrigger.cs
+//
+// Author: Arturo Serrano
+// Date: 30/02/21
+// Copyright: © Arturo Serrano
+//
+// Brief: Used to trigger events after player crosses it
+// ----------------------------------------------------------------------------
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,7 +14,7 @@ public class CrossingTrigger : MonoBehaviour
 {
     public UnityEvent OnPlayerCrossed = new UnityEvent();
 
-    private void Start()
+    void Start()
     {
         
     }

@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -95,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.003030777, y: -0.00665903, z: -0.015570877}
 --- !u!114 &2058264428114964962
 MonoBehaviour:
@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -205,7 +205,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.00031650066, y: -0.008960127, z: -0.014621256}
 --- !u!114 &2859222274447268905
 MonoBehaviour:
@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -315,7 +315,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.0018725395, y: -0.008847355, z: -0.012245892}
 --- !u!114 &7252326239751877227
 MonoBehaviour:
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294835984
-  m_fontColor: {r: 0.06132078, g: 1, b: 0.9904409, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -560,7 +560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -594,7 +594,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: 0.001019001, y: -0.008901714, z: -0.014068065}
 --- !u!114 &3836986593120479025
 MonoBehaviour:
@@ -710,7 +710,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -743,7 +743,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.0017912984, y: -0.007660865, z: -0.01324111}
 --- !u!114 &4206197284712798308
 MonoBehaviour:
@@ -819,7 +819,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -853,7 +853,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.0055264235, y: -0.004960775, z: -0.014178155}
 --- !u!114 &7759330567856659683
 MonoBehaviour:
@@ -929,7 +929,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -963,7 +963,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: -0.007088661, y: -0.010908245, z: -0.011559366}
 --- !u!114 &1873981119447467756
 MonoBehaviour:
@@ -1039,7 +1039,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1073,7 +1073,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: 0.00018370152, y: -0.006712674, z: -0.013865767}
 --- !u!114 &8330680782565033722
 MonoBehaviour:
@@ -1149,7 +1149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: a5311a2064819a649b3633714013465a, type: 2}
   - {fileID: 8767663704760279745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1183,7 +1183,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.16}
+  m_Size: {x: 0.05346655, y: 0.0521146, z: 0.07}
   m_Center: {x: 0.0014420748, y: -0.0031788344, z: -0.012232957}
 --- !u!114 &913859295443564843
 MonoBehaviour:
@@ -1260,9 +1260,9 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: 7794d946661c94e499aff95afd6da47d, type: 2}
   - {fileID: 2805930512725226745, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
-  - {fileID: 2889351833613440051, guid: 5d2d084a9f20d8340956fd0674995e58, type: 3}
+  - {fileID: 2100000, guid: 88eb1415856e7bd45bbadaa0fda43f43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1309,5 +1309,20 @@ MonoBehaviour:
   password: 885
   displayText: {fileID: 5933822680248159124}
   OnCorrectPassword:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnlockableDoor, Assembly-CSharp
+        m_MethodName: OnUnlocked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnIncorrectPassword:
     m_PersistentCalls:
       m_Calls: []

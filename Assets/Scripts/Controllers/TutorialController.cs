@@ -5,17 +5,18 @@
 // Date: 27/02/21
 // Copyright: © Arturo Serrano
 //
-// Brief: Sets the data depending on the step of the tutorial de player is in
+// Brief: Sets the audio and CC depending on the step of the tutorial de player is in
 // ----------------------------------------------------------------------------
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TutorialController : MonoBehaviour
 {
     public PasswordController passwordController;
     public GameObject player;
-    public int tutorialStep = 0;
+    public CanvasGroup tutorialCanvasGroup;
+    int tutorialStep = 0;
 
     [Header("AudioClips")]
     public AudioClip tutorialClip1;
@@ -44,6 +45,10 @@ public class TutorialController : MonoBehaviour
         {
             // Start
             case 1:
+
+                yield return new WaitForSeconds(2);
+                tutorialCanvasGroup.DOFade(1f, 0.25f);
+
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
                     Pitch = 1f,
@@ -52,10 +57,13 @@ public class TutorialController : MonoBehaviour
                 }, 0f);
                 CCManager.Instance.DisplaySubtitle(tutorialClip1, index: 0);
 
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(4);
                 CCManager.Instance.DisplaySubtitle(tutorialClip1, index: 1);
 
-                yield return new WaitForSeconds(11);
+                yield return new WaitForSeconds(4);
+                CCManager.Instance.DisplaySubtitle(tutorialClip1, index: 2);
+
+                yield return new WaitForSeconds(5);
                 SFXPlayer.Instance.PlaySFX(tutorialClip1_2, player.transform.position, new SFXPlayer.PlayParameters()
                 {
                     Pitch = 1f,
@@ -64,9 +72,13 @@ public class TutorialController : MonoBehaviour
                 }, 0f);
                 CCManager.Instance.DisplaySubtitle(tutorialClip1_2, index: 0);
 
+                yield return new WaitForSeconds(3);
+                tutorialCanvasGroup.DOFade(0f,0.25f);
                 break;
             // Cross first trigger wall
             case 2:
+                tutorialCanvasGroup.DOFade(1f, 0.25f);
+
                 SFXPlayer.Instance.PlaySFX(tutorialClip2, player.transform.position, new SFXPlayer.PlayParameters()
                 {
                     Pitch = 1f,
@@ -99,10 +111,12 @@ public class TutorialController : MonoBehaviour
                     Volume = 1.0f
                 }, 0.2f);
                 CCManager.Instance.DisplaySubtitle(tutorialClip4, index: 0);
-
+                yield return new WaitForSeconds(2);
+                tutorialCanvasGroup.DOFade(0f, 0.25f);
                 break;
             // Second Trigger Wall
             case 5:
+                tutorialCanvasGroup.DOFade(1f, 0.25f);
                 SFXPlayer.Instance.PlaySFX(tutorialClip5, player.transform.position, new SFXPlayer.PlayParameters()
                 {
                     Pitch = 1f,
@@ -154,13 +168,16 @@ public class TutorialController : MonoBehaviour
                     Volume = 1.0f
                 }, 0.2f);
                 CCManager.Instance.DisplaySubtitle(tutorialClip9, index: 0);
-
+                yield return new WaitForSeconds(8);
+                tutorialCanvasGroup.DOFade(0f, 0.25f);
                 break;
         }
 
         yield return new WaitForEndOfFrame();
 
     }
+
+    #region Callbacks
 
     // Reset the same message
     public void OnIncorrectPassword()
@@ -174,20 +191,22 @@ public class TutorialController : MonoBehaviour
         StartCoroutine(LoadTutorialStep(tutorialStep + 1));
     }
 
-    public void OnRollOverThreshold()
-    {
-        if(tutorialStep == 5)
-        {
-            OnTutorialNextStep();
-        }
-    }
     public void OnPitchOverThreshold()
     {
-        if (tutorialStep == 6)
+        if (tutorialStep == 5)
         {
             OnTutorialNextStep();
         }
     }
+
+    public void OnRollOverThreshold()
+    {
+        if(tutorialStep == 6)
+        {
+            OnTutorialNextStep();
+        }
+    }
+  
     public void OnYawOverThreshold()
     {
         if (tutorialStep == 7)
@@ -196,5 +215,13 @@ public class TutorialController : MonoBehaviour
         }
     }
 
+    public void OnSpeedDialChange()
+    {
+        if (tutorialStep == 8)
+        {
+            OnTutorialNextStep();
+        }
+    }
 
+    #endregion
 }
