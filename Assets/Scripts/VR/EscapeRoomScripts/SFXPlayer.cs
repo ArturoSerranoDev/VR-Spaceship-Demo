@@ -34,7 +34,7 @@ public class SFXPlayer : MonoBehaviour
     List<int> m_PlayingSources = new List<int>();
     
     AudioSource[] m_SFXSourcePool;
-    //CCSource[] m_CcSources;
+    CCSource[] m_CcSources;
     
     int m_UsedSource = 0;
     
@@ -49,13 +49,13 @@ public class SFXPlayer : MonoBehaviour
         s_Instance = this;
 
         m_SFXSourcePool = new AudioSource[SFXSourceCount];
-        //m_CcSources = new CCSource[SFXSourceCount];
+        m_CcSources = new CCSource[SFXSourceCount];
 
         for (int i = 0; i < SFXSourceCount; ++i)
         {
             m_SFXSourcePool[i] = Instantiate(SFXReferenceSource);
             m_SFXSourcePool[i].gameObject.SetActive(false);
-            //m_CcSources[i] = m_SFXSourcePool[i].GetComponent<CCSource>();
+            m_CcSources[i] = m_SFXSourcePool[i].GetComponent<CCSource>();
         }
     }
 
@@ -105,8 +105,7 @@ public class SFXPlayer : MonoBehaviour
     /// <param name="position"></param>
     /// <param name="parameters"></param>
     /// <param name="cooldownTime">Time before another PlaySFX with the same parameters.SourceID can be played again</param>
-    /// <param name="isClosedCaptioned">if true, the source will display a closed caption for the given clip if the closed caption system is enabled</param>
-    public void PlaySFX(AudioClip clip, Vector3 position, PlayParameters parameters, float cooldownTime = 0.5f, bool isClosedCaptioned = false)
+    public void PlaySFX(AudioClip clip, Vector3 position, PlayParameters parameters, float cooldownTime = 0.5f)
     {
         if(clip == null)
             return;
@@ -114,9 +113,8 @@ public class SFXPlayer : MonoBehaviour
         //can't play this sound again as the previous one with the same source was too early
         if (m_PlayEvents.ContainsKey(parameters.SourceID))
             return;
-        
-        AudioSource s = m_SFXSourcePool[m_UsedSource];
-        //CCSource ccs = m_CcSources[m_UsedSource];
+
+        AudioSource s = SFXReferenceSource;
         
         m_PlayingSources.Add(m_UsedSource);
         
@@ -131,9 +129,7 @@ public class SFXPlayer : MonoBehaviour
         s.pitch = parameters.Pitch;
         
         m_PlayEvents.Add(parameters.SourceID, new PlayEvent() { Time = cooldownTime });
-
-        //ccs.enabled = isClosedCaptioned;
-        
+     
         s.Play();
     }
 }

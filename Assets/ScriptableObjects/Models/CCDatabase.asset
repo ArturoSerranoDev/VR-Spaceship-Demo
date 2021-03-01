@@ -13,23 +13,49 @@ MonoBehaviour:
   m_Name: CCDatabase
   m_EditorClassIdentifier: 
   DatabaseEntries:
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
-  - clip: {fileID: 0}
-    Lines: []
+  - clip: {fileID: 8300000, guid: 689da19b3c3630c4eade362328db9beb, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Hello, and welcome to the Spaceship VR Demo
+    - StartSecond: 1
+      Text: This demo includes three lighting environments in High definition render
+        pipeline, a Hand pose driver, and some custom interactables made for VR
+  - clip: {fileID: 8300000, guid: ef6a211a3df096b489fab166c6406eb9, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: To continue with this demo, please move forward
+  - clip: {fileID: 8300000, guid: 0c58e0a066799c04da5c74e36559d074, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: In front of you there is a simple password interactable
+  - clip: {fileID: 8300000, guid: b8180d3f6618fc94c8720fdc128707d6, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: "To continue please introduce the following numbers: \u201C885\u201D"
+  - clip: {fileID: 8300000, guid: 3be587791cbc9514bbbf03fe21491d7f, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Great!
+  - clip: {fileID: 8300000, guid: 1269b8ae0139ec64583fdf7404f6ede0, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Now, grab the Wheel in front on you with both hands and try to pull it
+        towards you
+  - clip: {fileID: 8300000, guid: cbf599d043725d544891d755929049df, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Now, try to move sideways
+  - clip: {fileID: 8300000, guid: 6156fcfd7e9cf1d4c8b9416272302b8b, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Now, press both triggers while holding the Wheel to rotate around the
+        yaw axis
+  - clip: {fileID: 8300000, guid: 076fe4031c9f7004f949ea51da23f34b, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Finally, move the speed up to complete this tutorial
+  - clip: {fileID: 8300000, guid: e37856523d8152940986708252719ecb, type: 3}
+    Lines:
+    - StartSecond: 0
+      Text: Great job! Thanks for playing this Little tutorial of mine. Have a great
+        day!

@@ -19,6 +19,7 @@ public class TutorialController : MonoBehaviour
 
     [Header("AudioClips")]
     public AudioClip tutorialClip1;
+    public AudioClip tutorialClip1_2;
     public AudioClip tutorialClip2;
     public AudioClip tutorialClip3;
     public AudioClip tutorialClip4;
@@ -28,15 +29,14 @@ public class TutorialController : MonoBehaviour
     public AudioClip tutorialClip8;
     public AudioClip tutorialClip9;
    
-    // Start is called before the first frame update
     void Start()
     {
         passwordController.OnCorrectPassword.AddListener(OnTutorialNextStep);
-
+        passwordController.OnIncorrectPassword.AddListener(OnIncorrectPassword);
         OnTutorialNextStep();
     }
 
-    public void LoadTutorialStep(int step)
+    public IEnumerator LoadTutorialStep(int step)
     {
         tutorialStep = step;
 
@@ -46,81 +46,141 @@ public class TutorialController : MonoBehaviour
             case 1:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f,true);
+                }, 0f);
+                CCManager.Instance.DisplaySubtitle(tutorialClip1, index: 0);
+
+                yield return new WaitForSeconds(2);
+                CCManager.Instance.DisplaySubtitle(tutorialClip1, index: 1);
+
+                yield return new WaitForSeconds(11);
+                SFXPlayer.Instance.PlaySFX(tutorialClip1_2, player.transform.position, new SFXPlayer.PlayParameters()
+                {
+                    Pitch = 1f,
+                    SourceID = 17624,
+                    Volume = 1.0f
+                }, 0f);
+                CCManager.Instance.DisplaySubtitle(tutorialClip1_2, index: 0);
+
                 break;
+            // Cross first trigger wall
             case 2:
-                SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
+                SFXPlayer.Instance.PlaySFX(tutorialClip2, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
+                CCManager.Instance.DisplaySubtitle(tutorialClip2, index: 0);
+
+                yield return new WaitForSeconds(5);
+                OnTutorialNextStep();
+
                 break;
+            // Input password 
             case 3:
-                SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
+                SFXPlayer.Instance.PlaySFX(tutorialClip3, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
+                CCManager.Instance.DisplaySubtitle(tutorialClip3, index: 0);
+
                 break;
+            // Correct Password
             case 4:
-                SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
+                SFXPlayer.Instance.PlaySFX(tutorialClip4, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
+
+                CCManager.Instance.DisplaySubtitle(tutorialClip4, index: 0);
+
                 break;
+            // Second Trigger Wall
             case 5:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
                 break;
             case 6:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
                 break;
             case 7:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
                 break;
             case 8:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
                 break;
             case 9:
                 SFXPlayer.Instance.PlaySFX(tutorialClip1, player.transform.position, new SFXPlayer.PlayParameters()
                 {
-                    Pitch = Random.Range(0.8f, 1.2f),
+                    Pitch = 1f,
                     SourceID = 17624,
                     Volume = 1.0f
-                }, 0.2f, true);
+                }, 0.2f);
                 break;
         }
+
+        yield return new WaitForEndOfFrame();
+
+    }
+
+    // Reset the same message
+    public void OnIncorrectPassword()
+    {
+        tutorialStep -= 1;
+        StartCoroutine(LoadTutorialStep(tutorialStep + 1));
     }
 
     public void OnTutorialNextStep()
     {
-        LoadTutorialStep(tutorialStep + 1);
+        StartCoroutine(LoadTutorialStep(tutorialStep + 1));
+    }
+
+    public void OnRollOverThreshold()
+    {
+        if(tutorialStep == 5)
+        {
+            OnTutorialNextStep();
+        }
+    }
+    public void OnPitchOverThreshold()
+    {
+        if (tutorialStep == 6)
+        {
+            OnTutorialNextStep();
+        }
+    }
+    public void OnYawOverThreshold()
+    {
+        if (tutorialStep == 7)
+        {
+            OnTutorialNextStep();
+        }
     }
 
 

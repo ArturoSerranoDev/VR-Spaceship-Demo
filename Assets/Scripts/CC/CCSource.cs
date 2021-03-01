@@ -44,19 +44,19 @@ public class CCSource : MonoBehaviour
 
     public void Display(Vector3 toCamera, CCDatabase database)
     {
-        if (m_Source.clip == null)
-            return;
+        //if (m_Source.clip == null)
+        //    return;
         
-        if (!m_Displayed)
-        {
-            m_Displayed = true;
-            m_Canvas.gameObject.SetActive(true);
-        }
+        //if (!m_Displayed)
+        //{
+        //    m_Displayed = true;
+        //    m_Canvas.gameObject.SetActive(true);
+        //}
 
-        m_Canvas.transform.forward = toCamera;
+        //m_Canvas.transform.forward = toCamera;
 
-        string entry = database.GetTextEntry(m_Source.clip, m_Source.time);
-        m_Canvas.CCText.text = entry;
+        //string entry = database.GetTextEntry(m_Source.clip, m_Source.time);
+        //m_Canvas.CCText.text = entry;
     }
 
     public void Hide()

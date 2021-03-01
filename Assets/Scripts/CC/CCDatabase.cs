@@ -35,19 +35,21 @@ public class CCDatabase : ScriptableObject
         }
     }
 
-    public string GetTextEntry(AudioClip clip, float time)
+    public string GetTextEntry(AudioClip clip, int index)
     {
         Entry entry;
         if (m_AudioToEntryMap.TryGetValue(clip, out entry))
         {
-            int count = entry.Lines.Length;
-            for (int i = 0; i < count; ++i)
-            {
-                if (i == count - 1 || (entry.Lines[i].StartSecond < time && entry.Lines[i + 1].StartSecond > time))
-                {
-                    return entry.Lines[i].Text;
-                }
-            }
+            return entry.Lines[index].Text;
+
+            //int count = entry.Lines.Length;
+            //for (int i = 0; i < count; ++i)
+            //{
+            //    if (i == count - 1 || (entry.Lines[i].StartSecond < time && entry.Lines[i + 1].StartSecond > time))
+            //    {
+            //        return entry.Lines[i].Text;
+            //    }
+            //}
         }
 
         return "CLOSED_CAPTION_MISSING";

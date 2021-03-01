@@ -22,6 +22,7 @@ public class PasswordController : MonoBehaviour
     public TextMeshPro displayText;
 
     public UnityEvent OnCorrectPassword = new UnityEvent();
+    public UnityEvent OnIncorrectPassword = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,8 @@ public class PasswordController : MonoBehaviour
             {
                 currentPassword = string.Empty;
                 displayText.text = string.Empty;
+
+                OnIncorrectPassword?.Invoke();
             }
         }
     }
