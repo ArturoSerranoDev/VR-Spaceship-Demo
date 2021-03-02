@@ -37,6 +37,8 @@ public class TutorialController : MonoBehaviour
         OnTutorialNextStep();
     }
 
+    // Done  with coroutine for easy setup, it would be better to wait for the audio clip
+    // to finish before sending the next one
     public IEnumerator LoadTutorialStep(int step)
     {
         tutorialStep = step;
@@ -45,7 +47,6 @@ public class TutorialController : MonoBehaviour
         {
             // Start
             case 1:
-
                 yield return new WaitForSeconds(2);
                 tutorialCanvasGroup.DOFade(1f, 0.25f);
 

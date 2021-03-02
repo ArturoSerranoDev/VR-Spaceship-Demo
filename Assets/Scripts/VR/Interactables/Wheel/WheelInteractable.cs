@@ -49,6 +49,7 @@ public class WheelInteractable : MonoBehaviour
 
     void Start()
     {
+        // Add event listeners
         for (int i = 0; i < wheelHandHolds.Count; i++)
         {
             WheelHandHold handHold = wheelHandHolds[i];
@@ -205,10 +206,7 @@ public class WheelInteractable : MonoBehaviour
         wheelHandleGO.transform.rotation = WheelHandleRot;
     }
 
-    /// <summary>
-    /// Helper method to get the current middle point between controllers
-    /// </summary>
-    /// <returns></returns>
+    // Helper method to get the current middle point between controllers
     Vector3 GetMiddlePointOfWheel()
     {
         if (controllerInteractors.Count == 2)
